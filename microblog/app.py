@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from .routes import main_router
 
 app = FastAPI(
     title="microblog",
@@ -10,3 +11,6 @@ app = FastAPI(
 @app.get("/")
 async def index():
     return {"hello": "world"}
+
+
+app.include_router(main_router)
