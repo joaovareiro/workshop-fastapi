@@ -1,7 +1,9 @@
 from typing import List
+
 from fastapi import APIRouter
 from fastapi.exceptions import HTTPException
 from sqlmodel import Session, select
+
 from microblog.db import ActiveSession
 from microblog.models.user import User, UserRequest, UserResponse
 

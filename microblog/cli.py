@@ -2,9 +2,10 @@ import typer
 from rich.console import Console
 from rich.table import Table
 from sqlmodel import Session, select
+
 from .config import settings
 from .db import engine
-from .models import User
+from .models import Post, SQLModel, User
 
 main = typer.Typer(name="microblog CLI")
 
@@ -18,6 +19,7 @@ def shell():
         "select": select,
         "session": Session(engine),
         "User": User,
+        "Post": Post,
     }
     typer.echo(f"Auto imports: {list(_vars.keys())}")
     try:

@@ -7,10 +7,4 @@ app = FastAPI(
     description="microblog is a posting app to clone twitter",
 )
 
-
-@app.get("/")
-async def index():
-    return {"hello": "world"}
-
-
 app.include_router(main_router)
